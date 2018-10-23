@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+body
+{
+ padding:0px;
+ margin:0px;
+ } 
+</style>
+<head>
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+<script src="js/login.js"></script>
+</head>
+<link rel="stylesheet" href="css/loginstyle.css">
+<body style="background-color:transparent">
+<div id="page_screen">
+    &nbsp;
+</div>
+<div id="login_panel" style="display:none;background-color:transparent;border:0px;">
+<div id="modal-wrapper" class="modal">
+  
+  <form class="animate" action="/action_page.php" id="accesspanel" action="login" method="post">
+ 
+  <h1 id="litheader">REAPlay</h1>
+  <div class="inset">
+    <p>
+      <input type="text" name="username" id="email" placeholder="Email address">
+    </p>
+    <p>
+      <input type="password" name="password" id="password" placeholder="Access code">
+      <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirm Access Code" hidden>
+    </p>
+    <div style="text-align: center;" id="register_radio_div">
+      <div class="checkboxouter">
+        <input type="checkbox" name="rememberme" id="register_radio" value="register-radio" onclick="register_checked()">
+        <label class="checkbox"></label>
+      </div>
+      <label for="register-radio">Click To Register New Account</label>
+    </div>
+	<div style="text-align: center;" id="forgot_radio_div" hidden>
+	<div class="checkboxouter">
+        <input type="checkbox" name="forgot_pass_radio" id="forgot_pass_radio" value="forgot-radio" onclick="forgot_password()">
+        <label class="checkbox"></label>
+      </div>
+      <label for="forgot-radio" id="forgot-label">Forgot Password</label>
+    </div>
+	<div style="text-align: center;" id="forgot_msg_div" hidden>
+		<input type="checkbox" name="forgot_msg" id="forgot_msg" value="forgot-radio" hidden>        
+        <label for="forgot-radio" id="forgot-label">Recovery Instructions Have Been Sent To Your Registered Email</label>
+    </div>
+	</div>
+    <input class="loginLoginValue" type="hidden" name="service" value="login" />  
+  <p class="p-container">
+    <input type="button" name="Login" id="loginbtn" value="Authorize">  
+    <input type="button" name="Signup" id="signupbtn" value="Register" hidden>
+    <input type="button" name="Logout" id="logoutbtn" value="LogOut" hidden>
+    <input type="button" name="Recover Password" id="forgotbtn" value="Recover Access Code" hidden>
+  </p>
+</form>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+</div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>window.onload=document.getElementById('modal-wrapper').style.display='block';</script>
+<script>window.onload=show_login();</script>
+<script src="js/firebase.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
